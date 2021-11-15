@@ -35,7 +35,7 @@ def get_urls():
 
 def head_response(url):
     try:
-        response = requests.head(url, timeout=2.5)
+        response = requests.head(url, timeout=3)
         original_urls_data[url] = response.status_code
 
     except Exception as e:
@@ -44,7 +44,7 @@ def head_response(url):
 
 def get_response(url):
     try:
-        response = requests.get(url, timeout=2.5)
+        response = requests.get(url, timeout=3)
         unshorten_urls_data[url] = response.url
 
     except Exception as e:
